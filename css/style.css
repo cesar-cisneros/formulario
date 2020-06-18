@@ -1,0 +1,44 @@
+body {
+    background-color: #AADDFF;
+    font: Verdana;
+    padding: 0;
+}
+
+p {
+    font-size: 16px;
+    color: darkgreen;
+}
+
+form {
+    width: 450px;
+    color: #fff;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.678);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#boton {
+    background: rgba(185, 60, 60, 0.822);
+    color: #fff;
+    padding: 20px;
+}
