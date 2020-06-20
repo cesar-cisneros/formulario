@@ -137,5 +137,4 @@ function validar(formulario) {
 
     //Fecha válida
     alert("la fecha es correcta " + dia + "/" + mes + "/" + año);
-
 }
