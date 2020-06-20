@@ -150,7 +150,7 @@ function calcularedad(formulario2) {
         return false;
     }
     if (formulario2.mes.value.length != 2) {
-        alert("Escriba maximo 2 digitos, o la  fecha maxima es de 31")
+        alert("Escriba en formato de meses mm, o la  fecha maxima es de 31")
             //focus() nos ayuda a focalizar donde esta el error del llenado
             //realiza un posicionamiento al elemento del formulario
         formulario2.mes.focus();
@@ -198,4 +198,26 @@ function calcularedad(formulario2) {
     }
 
     document.getElementById('mostraredad').innerHTML = +edad;
+}
+
+function porcentaje() {
+    var total, sexo, Nhombre = 0,
+        Nmujer = 0,
+        porcentaje;
+    total = prompt("¿cuantas personas hay en el salon?");
+    for (personas = 1; personas <= total; personas++) {
+        sexo = prompt("¿Es hombre o mujer?", "hombre", "mujer");
+        if (sexo == "hombre"); {
+            Nhombre++;
+            alert("se ha añadido un hombre");
+        }
+        if (sexo == "mujer") {
+            Nmujer++;
+            alert("se ha añadido una mujer");
+        }
+    } //for 
+    porcentaje = (Nhombre * 100) / total;
+    alert("El porcentaje de hombres es:" + porcentaje + "%");
+    porcetajem = (Nmujer - 100) / total;
+    alert("El porcentaje de mujeres es:" + porcentajem + "%");
 }
