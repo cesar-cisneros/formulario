@@ -201,23 +201,25 @@ function calcularedad(formulario2) {
 }
 
 function porcentaje() {
-    var total, sexo, Nhombre = 0,
-        Nmujer = 0,
-        porcentaje;
-    total = prompt("¿cuantas personas hay en el salon?");
-    for (personas = 1; personas <= total; personas++) {
-        sexo = prompt("¿Es hombre o mujer?", "hombre", "mujer");
-        if (sexo == "hombre"); {
-            Nhombre++;
+    var totalpersonas, sexo, numhombres = 0,
+        nummujeres = 0,
+        porchombres;
+
+    totalpersonas = prompt("cuantas personas conforman el grupo");
+    for (i = 1; i <= totalpersonas; i++) {
+        sexo = prompt("es hombre o mujer?", "hombre", "mujer");
+        if (sexo == "hombre") {
+            numhombres++;
             alert("se ha añadido un hombre");
         }
         if (sexo == "mujer") {
-            Nmujer++;
+            nummujeres++;
             alert("se ha añadido una mujer");
         }
-    } //for 
-    porcentaje = (Nhombre * 100) / total;
-    alert("El porcentaje de hombres es:" + porcentaje + "%");
-    porcetajem = (Nmujer - 100) / total;
-    alert("El porcentaje de mujeres es:" + porcentajem + "%");
+    }
+    porchombres = (numhombres * 100) / totalpersonas;
+    alert("el porcentaje de hombres es:" + " " + porchombres + "%");
+    porcmujeres = (nummujeres * 100) / totalpersonas;
+    alert("el porcentaje de mujeres es:" + " " + porcmujeres + "%");
+
 }
