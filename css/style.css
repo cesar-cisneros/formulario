@@ -20,7 +20,8 @@ form {
     border-radius: 7px;
 }
 
-input {
+input,
+button {
     width: 100%;
     margin-bottom: 20px;
     padding: 7px;
