@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULAR EDAD</title>
-    <link rel="stylesheet" href="css/style.css">
     <script language="javascript" type="text/javascript" src="js/validacion.js">
     </script>
 </head>
@@ -13,18 +12,15 @@
 <body>
     <form action="" method="get" name="formulario2">
         fecha de nacimiento: Dia: <input type="number" size="2" name="dia"> Mes: <input type="number" name="mes" size="2"> Año: <input type="number" name="año" size="4">
-        <br>
+        <br> su edad es:
+
         <div id="mostraredad"></div>
 
-
-        <button onclick="return calcularedad(formulario2)" id="boton">calcular edad</button>
         <br>
-
-        <input type="reset" value="Borrar Datos" name="borrar" id="boton">
-        <a href="index.html">VOLVER AL FORMULARIO</a>
+        <input type="reset" value="Borrar Datos" name="borrar">
     </form>
-
-
+    <button onclick="return calcularedad(formulario2)">calcular edad</button>
 </body>
+<a href="index.html">VOLVER AL FORMULARIO</a>
 
 </html>
