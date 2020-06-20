@@ -138,3 +138,64 @@ function validar(formulario) {
     //Fecha válida
     alert("la fecha es correcta " + dia + "/" + mes + "/" + año);
 }
+
+function calcularedad(formulario2) {
+
+    //validacion de fecha --------------------------------------------------------
+    if (formulario2.dia.value.length != 2) {
+        alert("el formato de fecha es dd, o la  fecha maxima es de 31")
+            //focus() nos ayuda a focalizar donde esta el error del llenado
+            //realiza un posicionamiento al elemento del formulario
+        formulario.dia.focus();
+        return false;
+    }
+    if (formulario2.mes.value.length != 2) {
+        alert("Escriba maximo 2 digitos, o la  fecha maxima es de 31")
+            //focus() nos ayuda a focalizar donde esta el error del llenado
+            //realiza un posicionamiento al elemento del formulario
+        formulario2.mes.focus();
+        return false;
+    }
+    if (formulario2.año.value.length != 4) {
+        alert("el formato de la fecha es yyyyy, escribe 4 digitos")
+            //focus() nos ayuda a focalizar donde esta el error del llenado
+            //realiza un posicionamiento al elemento del formulario
+        formulario2.año.focus();
+        return false;
+    }
+    //partes de la fecha -------------------------------------------------------
+    var dia = formulario2.dia.value;
+    var mes = formulario2.mes.value;
+    var año = formulario2.año.value;
+    fecha_actual = new Date();
+    año_actual = fecha_actual.getFullYear();
+    mes_actual = fecha_actual.getMonth();
+    dia_actual = fecha_actual.getDate();
+    edad = año_actual - año;
+
+    if (año < 1950 || año > 2050) return alert("el año esta fuera de los limites, el rango es de 1950 a 2050");;
+    //Validar manualmente
+    if (mes < 1 || mes > 12) return alert("el mes esta fuera de rango, el rango es minimo 1 y maximo 12");
+
+    let diasPorMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    //Si es bisiesto, febrero tiene 29
+    if (mes == 2 && (año % 4 == 0 && año % 100 != 0) || año % 400 == 0)
+        diasPorMes[1] = 29;
+
+    //Que no tenga más días de los permitidos en el mes
+    if (dia > diasPorMes[mes - 1]) return alert("el año no es bisiesto");
+
+    //Fecha válida
+    alert("la fecha es correcta " + dia + "/" + mes + "/" + año);
+
+
+    if (mes < (mes_actual - 1)) {
+        edad--;
+    }
+    if (((mes - 1) == mes_actual) && (dia_actual < dia)) {
+        edad--;
+    }
+
+    document.getElementById('mostraredad').innerHTML = +edad;
+}
